@@ -1,0 +1,24 @@
+[
+  {
+    "name": "AQI",
+    "key_prefix": "home_aqi_",
+    "path": "/aqi/metrics",
+    "json": [
+      {
+        "path": "/home/kory/dev/air_qual_light/aqi_output.json",
+        "jq_map": {
+          "edison_aqicn": ".rxs.obs[0].msg.aqi"
+        }
+      },
+      {
+        "path": "/home/kory/dev/air_qual_light/ftc_aqi_data.json",
+        "jq_map": {
+          "edison_pm25": ".locations[] | select(.name == \"Edison Street\") | .pm25.data[0]",
+          "edison_pm10": ".locations[] | select(.name == \"Edison Street\") | .pm10.data[0]",
+          "gardens_pm25": ".locations[] | select(.name == \"Gardens on Spring Creek\") | .pm25.data[0]",
+          "gardens_pm10": ".locations[] | select(.name == \"Gardens on Spring Creek\") | .pm10.data[0]"
+        }
+      }
+    ]
+  }
+]
