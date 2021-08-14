@@ -22,6 +22,9 @@ The config JSON is an array of endpoints. For each endpoint we have the followin
   * *path* - the path of the JSON file on local filesystem
   * *jq_map* - an object of the fields to extract where the key name is the appended to the prefix. The value is the jq syntax of the field. If it returns more than one value, the values will be indexed. https://stedolan.github.io/jq/manual/#Basicfilters
 
+### running
+* `python simple_prom_server.py`
+
 ### notes/caveats
 * The current `config.json` is an example, you will need to rewrite it for your own needs
 * This should not be used in production, it was written in a few hours
